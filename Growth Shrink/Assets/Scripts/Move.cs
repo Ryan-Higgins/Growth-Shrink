@@ -1,0 +1,32 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Move : MonoBehaviour {
+
+	Rigidbody2D myRB;
+	Grow growScript;
+	float h;
+	public float speed;
+
+	// Use this for initialization
+	void Start () {
+		myRB = GetComponent<Rigidbody2D> ();
+
+		speed = 100;
+	}
+	
+	// Update is called once per frame
+	void Update () {
+		h = Input.GetAxis ("Horizontal");
+
+		Vector3 jump = new Vector3 (0, speed, 0);
+		Vector3 move = new Vector3 (h, 0, 0);
+
+		myRB.AddForce (move * speed);
+
+		if (Input.GetKeyDown (KeyCode.W)) {
+			myRB.AddForce(jump*speed/4);
+		}
+	}
+}

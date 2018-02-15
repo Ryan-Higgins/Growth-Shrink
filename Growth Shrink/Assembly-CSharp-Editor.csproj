@@ -9,10 +9,10 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{4ACC9CA0-507F-A632-5357-2A7DEA04FCF9}</ProjectGuid>
+    <ProjectGuid>{538E5068-3474-E29E-42CC-3421D70E704A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <AssemblyName>Assembly-CSharp</AssemblyName>
+    <AssemblyName>Assembly-CSharp-Editor</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <BaseDirectory>Assets</BaseDirectory>
@@ -51,9 +51,49 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\Grow.cs" />
-     <Compile Include="Assets\Scripts\Move.cs" />
-     <Compile Include="Assets\Scripts\Shrink.cs" />
+     <Compile Include="Assets\Cinemachine\Base\Editor\Editors\CinemachineBasicMultiChannelPerlinEditor.cs" />
+     <Compile Include="Assets\Cinemachine\Base\Editor\Editors\CinemachineBlenderSettingsEditor.cs" />
+     <Compile Include="Assets\Cinemachine\Base\Editor\Editors\CinemachineBlendListCameraEditor.cs" />
+     <Compile Include="Assets\Cinemachine\Base\Editor\Editors\CinemachineBrainEditor.cs" />
+     <Compile Include="Assets\Cinemachine\Base\Editor\Editors\CinemachineClearShotEditor.cs" />
+     <Compile Include="Assets\Cinemachine\Base\Editor\Editors\CinemachineColliderEditor.cs" />
+     <Compile Include="Assets\Cinemachine\Base\Editor\Editors\CinemachineComposerEditor.cs" />
+     <Compile Include="Assets\Cinemachine\Base\Editor\Editors\CinemachineConfinerEditor.cs" />
+     <Compile Include="Assets\Cinemachine\Base\Editor\Editors\CinemachineExternalCameraEditor.cs" />
+     <Compile Include="Assets\Cinemachine\Base\Editor\Editors\CinemachineFramingTransposerEditor.cs" />
+     <Compile Include="Assets\Cinemachine\Base\Editor\Editors\CinemachineFreeLookEditor.cs" />
+     <Compile Include="Assets\Cinemachine\Base\Editor\Editors\CinemachineGroupComposerEditor.cs" />
+     <Compile Include="Assets\Cinemachine\Base\Editor\Editors\CinemachineHardLockToTargetEditor.cs" />
+     <Compile Include="Assets\Cinemachine\Base\Editor\Editors\CinemachineHardLookAtEditor.cs" />
+     <Compile Include="Assets\Cinemachine\Base\Editor\Editors\CinemachineMixingCameraEditor.cs" />
+     <Compile Include="Assets\Cinemachine\Base\Editor\Editors\CinemachineOrbitalTransposerEditor.cs" />
+     <Compile Include="Assets\Cinemachine\Base\Editor\Editors\CinemachinePathEditor.cs" />
+     <Compile Include="Assets\Cinemachine\Base\Editor\Editors\CinemachinePOVEditor.cs" />
+     <Compile Include="Assets\Cinemachine\Base\Editor\Editors\CinemachineScreenComposerGuides.cs" />
+     <Compile Include="Assets\Cinemachine\Base\Editor\Editors\CinemachineSmoothPathEditor.cs" />
+     <Compile Include="Assets\Cinemachine\Base\Editor\Editors\CinemachineStateDrivenCameraEditor.cs" />
+     <Compile Include="Assets\Cinemachine\Base\Editor\Editors\CinemachineTargetGroupEditor.cs" />
+     <Compile Include="Assets\Cinemachine\Base\Editor\Editors\CinemachineTrackedDollyEditor.cs" />
+     <Compile Include="Assets\Cinemachine\Base\Editor\Editors\CinemachineTransposerEditor.cs" />
+     <Compile Include="Assets\Cinemachine\Base\Editor\Editors\CinemachineVirtualCameraBaseEditor.cs" />
+     <Compile Include="Assets\Cinemachine\Base\Editor\Editors\CinemachineVirtualCameraEditor.cs" />
+     <Compile Include="Assets\Cinemachine\Base\Editor\Menus\CinemachineMenu.cs" />
+     <Compile Include="Assets\Cinemachine\Base\Editor\PropertyDrawers\CinemachineBlendDefinitionPropertyDrawer.cs" />
+     <Compile Include="Assets\Cinemachine\Base\Editor\PropertyDrawers\CinemachineTagFieldPropertyDrawer.cs" />
+     <Compile Include="Assets\Cinemachine\Base\Editor\PropertyDrawers\GetSetDrawer.cs" />
+     <Compile Include="Assets\Cinemachine\Base\Editor\PropertyDrawers\LensSettingsPropertyDrawer.cs" />
+     <Compile Include="Assets\Cinemachine\Base\Editor\PropertyDrawers\MinDrawer.cs" />
+     <Compile Include="Assets\Cinemachine\Base\Editor\Utility\BaseEditor.cs" />
+     <Compile Include="Assets\Cinemachine\Base\Editor\Utility\EmbeddedAssetHelpers.cs" />
+     <Compile Include="Assets\Cinemachine\Base\Editor\Utility\SaveDuringPlay.cs" />
+     <Compile Include="Assets\Cinemachine\Base\Editor\Utility\ScriptableObjectUtility.cs" />
+     <Compile Include="Assets\Cinemachine\Base\Editor\Utility\SerializedPropertyHelper.cs" />
+     <Compile Include="Assets\Cinemachine\Base\Editor\Windows\AboutWindow.cs" />
+     <Compile Include="Assets\Cinemachine\Base\Editor\Windows\CinemachineColliderPrefs.cs" />
+     <Compile Include="Assets\Cinemachine\Base\Editor\Windows\CinemachineSettings.cs" />
+     <Compile Include="Assets\Cinemachine\PostFX\Editor\CinemachinePostProcessingEditor.cs" />
+     <Compile Include="Assets\Cinemachine\PostFX\Editor\PostFXAutoImport.cs" />
+     <Compile Include="Assets\Cinemachine\Timeline\Editor\CinemachineShotEditor.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
@@ -147,6 +187,10 @@
  <Reference Include="UnityEngine.StandardEvents">
  <HintPath>C:/Users/Admin/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.10/UnityEngine.StandardEvents.dll</HintPath>
  </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp.csproj">
+      <Project>{4ACC9CA0-507F-A632-5357-2A7DEA04FCF9}</Project>      <Name>Assembly-CSharp</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
