@@ -4,7 +4,11 @@
 TagManager:
   serializedVersion: 2
   tags:
+<<<<<<< HEAD
+  - Floor
+=======
   - Grow
+>>>>>>> origin/master
   layers:
   - Default
   - TransparentFX
