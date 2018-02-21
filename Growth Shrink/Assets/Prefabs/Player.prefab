@@ -21,6 +21,8 @@ GameObject:
   - component: {fileID: 4180858254129676}
   - component: {fileID: 33592846765131182}
   - component: {fileID: 23848263578241334}
+  - component: {fileID: 114100278346573148}
+  - component: {fileID: 114436617900946676}
   - component: {fileID: 114069515284547240}
   - component: {fileID: 114858908285443970}
   - component: {fileID: 50010729043629604}
@@ -143,6 +145,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0
+  grounded: 0
+--- !u!114 &114100278346573148
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1280075532947440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ae565edd9b73724cbdd360d4604b609, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114436617900946676
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1280075532947440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8227b5abf250bf84599907695ade4986, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnPointPrefab: {fileID: 1262149656859224, guid: a16d6a344a8e92846b68682938719bab,
+    type: 2}
+  spawnPoint: {x: 0, y: 0, z: 0}
+  isPlaced: 0
+  clone: {fileID: 0}
 --- !u!114 &114858908285443970
 MonoBehaviour:
   m_ObjectHideFlags: 1
