@@ -35,7 +35,8 @@ public class Grow : MonoBehaviour {
 			if (transform.localScale.x <= growthLimit && transform.localScale.y <= growthLimit) {
 				transform.localScale += new Vector3(growthIncrease,growthIncrease,0);
 				//Adds speed each time so that the player can actually keep moving
-				move.speed += 50;
+				move.speed += 200;
+				move.jumpDivider += 5;
 			}
 		}
 	}

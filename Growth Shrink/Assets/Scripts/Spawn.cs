@@ -23,7 +23,7 @@ public class Spawn : MonoBehaviour
 		if (Input.GetButtonDown ("Fire1")) {
 			if (!isPlaced) {
 				if (transform.localScale.x > 1) {
-					spawnPoint = new Vector3 (transform.position.x, transform.position.y, transform.position.z);
+					spawnPoint = new Vector3 (transform.position.x, transform.position.y, transform.position.z-1);
 					Instantiate (spawnPointPrefab, spawnPoint, gameObject.transform.rotation);
 					isPlaced = true;
 					gameObject.transform.localScale -= new Vector3 (myGrow.growthIncrease, myGrow.growthIncrease, 0);

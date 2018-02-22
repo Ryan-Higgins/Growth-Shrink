@@ -9,12 +9,14 @@ public class Move : MonoBehaviour {
 	float h;
 	public float speed;
 	public bool grounded;
+	public int jumpDivider;
 
 	// Use this for initialization
 	void Start () {
 		myRB = GetComponent<Rigidbody2D> ();
 
 		speed = 100;
+		jumpDivider = 5;
 	}
 	
 	// Update is called once per frame
@@ -35,7 +37,7 @@ public class Move : MonoBehaviour {
 		}
 
 		if (grounded == true && Input.GetButtonDown ("Jump")) {
-			myRB.AddForce (jump * speed / 4);
+			myRB.AddForce (jump * speed / jumpDivider);
 		}
 	}
 }
