@@ -17,7 +17,7 @@ public class Death : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetButtonDown ("Fire2")) {
+		if (Input.GetAxis ("Spawn") == 1) {
 			if (mySpawnPoint.isPlaced) {
 				transform.position = mySpawnPoint.spawnPoint;
 				transform.localScale = new Vector3 (1, 1, 1);
@@ -25,12 +25,12 @@ public class Death : MonoBehaviour {
 				mySpawnPoint.clone.SetActive (false);
 				myMove.speed = 100;
 				myMove.jumpDivider = 5;
-			} else if (!mySpawnPoint.isPlaced) {
+			} /*else if (!mySpawnPoint.isPlaced) {
 				transform.position = levelSpawn.position;
 				transform.localScale = new Vector3 (1, 1, 1);
 				myMove.speed = 100;
 				myMove.jumpDivider = 5;
-			}
+			}*/
 		}
 	}
 }

@@ -20,7 +20,7 @@ public class Spawn : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-		if (Input.GetButtonDown ("Fire1")) {
+		if (Input.GetAxis ("Drop") == 1) {
 			if (!isPlaced) {
 				if (transform.localScale.x > 1) {
 					spawnPoint = new Vector3 (transform.position.x, transform.position.y, transform.position.z-1);
