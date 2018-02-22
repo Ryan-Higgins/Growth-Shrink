@@ -8,6 +8,7 @@ public class Move : MonoBehaviour {
 	Grow growScript;
 	float h;
 	public float speed;
+	public bool grounded;
 
 	// Use this for initialization
 	void Start () {
@@ -24,9 +25,17 @@ public class Move : MonoBehaviour {
 		Vector3 move = new Vector3 (h, 0, 0);
 
 		myRB.AddForce (move * speed);
+		//Debug.DrawRay (new Vector3 (transform.position.x, transform.position.y-0.5f - transform.localScale.y / 2, transform.position.z), Vector3.down);
+		RaycastHit2D hit = Physics2D.Raycast (new Vector3 (transform.position.x, transform.position.y-0.5f - transform.localScale.y / 2, transform.position.z), Vector3.down, 0.01f);
 
-		if (Input.GetKeyDown (KeyCode.W)) {
-			myRB.AddForce(jump*speed/4);
+		if (hit.collider != null) {
+			grounded = true;
+		} else { 
+			grounded = false;
+		}
+
+		if (grounded == true && Input.GetButtonDown ("Jump")) {
+			myRB.AddForce (jump * speed / 4);
 		}
 	}
 }
