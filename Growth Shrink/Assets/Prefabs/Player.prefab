@@ -27,7 +27,7 @@ GameObject:
   - component: {fileID: 114858908285443970}
   - component: {fileID: 50010729043629604}
   - component: {fileID: 61703817490142602}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1280075532947440}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.06, y: 0.12, z: 0}
+  m_LocalPosition: {x: -4.78, y: -2.84, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -100,14 +100,14 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 1
   m_Mass: 1
-  m_LinearDrag: 5.27
-  m_AngularDrag: 1.55
-  m_GravityScale: 1.5
+  m_LinearDrag: 1
+  m_AngularDrag: 0
+  m_GravityScale: 8
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &61703817490142602
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -146,6 +146,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0
   grounded: 0
+  jumpDivider: 0
 --- !u!114 &114100278346573148
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -170,9 +171,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPointPrefab: {fileID: 1262149656859224, guid: a16d6a344a8e92846b68682938719bab,
     type: 2}
-  spawnPoint: {x: 0, y: 0, z: 0}
-  isPlaced: 0
-  clone: {fileID: 0}
+  spawnPoint1: {x: 0, y: 0, z: 0}
+  spawnPoint2: {x: 0, y: 0, z: 0}
+  firstPlaced: 0
+  canPlaceSecond: 0
+  secondPlaced: 0
+  clone1: {fileID: 0}
+  clone2: {fileID: 0}
+  speed1: 0
+  speed2: 0
+  jump1: 0
+  jump2: 0
 --- !u!114 &114858908285443970
 MonoBehaviour:
   m_ObjectHideFlags: 1
