@@ -16,6 +16,7 @@ public class Spawn : MonoBehaviour
 	public float speed2;
 	public int jump1;
 	public int jump2;
+	public int oldest;
 
 	Grow myGrow;
 	Move myMove;
@@ -28,11 +29,13 @@ public class Spawn : MonoBehaviour
 		myGrow = GetComponent<Grow> ();
 		canPlaceSecond = false;
 		secondPlaced = false;
+		oldest = 0;
 	}
 
 	// Update is called once per frame
 	void FixedUpdate ()
 	{
+		
 		if (Input.GetAxis ("Drop") == 1) {
 			if (transform.localScale.x > 1) {
 				if (!firstPlaced) {
@@ -47,7 +50,10 @@ public class Spawn : MonoBehaviour
 					gameObject.transform.localScale -= new Vector3 (myGrow.growthIncrease, myGrow.growthIncrease, 0);
 					myMove.speed -= 200;
 					myMove.jumpDivider -= 5;
-				} else if (canPlaceSecond) {
+					if (GameObject.Find ("Second") == null) {
+						oldest = 1;
+					}
+				} else if (canPlaceSecond && GameObject.Find("Second") == null) {
 					spawnPoint2 = new Vector3 (transform.position.x, transform.position.y, transform.position.z - 1);
 					Instantiate (spawnPointPrefab, spawnPoint2, gameObject.transform.rotation);
 					clone2 = GameObject.Find ("Spawn Point(Clone)");

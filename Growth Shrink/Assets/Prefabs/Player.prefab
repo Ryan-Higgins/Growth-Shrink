@@ -19,14 +19,14 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4180858254129676}
-  - component: {fileID: 33592846765131182}
-  - component: {fileID: 23848263578241334}
   - component: {fileID: 114100278346573148}
   - component: {fileID: 114436617900946676}
   - component: {fileID: 114069515284547240}
   - component: {fileID: 114858908285443970}
   - component: {fileID: 50010729043629604}
-  - component: {fileID: 61703817490142602}
+  - component: {fileID: 33456186740738352}
+  - component: {fileID: 23616025006267724}
+  - component: {fileID: 61505101242904306}
   m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
@@ -47,7 +47,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &23848263578241334
+--- !u!23 &23616025006267724
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -69,7 +69,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_PreserveUVs: 1
+  m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
   m_StitchLightmapSeams: 0
@@ -81,7 +81,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!33 &33592846765131182
+--- !u!33 &33456186740738352
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -108,7 +108,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!61 &61703817490142602
+--- !u!61 &61505101242904306
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
