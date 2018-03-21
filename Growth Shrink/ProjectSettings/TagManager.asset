@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Grow
   - Fan
+  - Wall
   layers:
   - Default
   - TransparentFX
