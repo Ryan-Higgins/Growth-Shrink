@@ -4,14 +4,11 @@ using UnityEngine;
 
 public class MovingPlatform : MonoBehaviour {
 
-	GameObject left;
-	GameObject right;
 	float speed = 0.1f;
 
 	// Use this for initialization
 	void Start () {
-		left = GameObject.Find ("Left");
-		right = GameObject.Find ("Right");
+
 	}
 	
 	// Update is called once per frame
