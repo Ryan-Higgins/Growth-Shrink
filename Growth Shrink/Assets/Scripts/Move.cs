@@ -30,7 +30,7 @@ public class Move : MonoBehaviour {
 		//Debug.DrawRay (new Vector3 (transform.position.x, transform.position.y-2.5f - transform.localScale.y / 2, transform.position.z), Vector3.down);
 		RaycastHit2D hit = Physics2D.Raycast (new Vector3 (transform.position.x, transform.position.y - 2.5f - transform.localScale.y / 2, transform.position.z), Vector3.down, 0.01f);
 
-		if (hit.collider != null) {
+		if (hit.collider != null && hit.collider.tag == "Floor") {
 			grounded = true;
 		} else { 
 			grounded = false;
