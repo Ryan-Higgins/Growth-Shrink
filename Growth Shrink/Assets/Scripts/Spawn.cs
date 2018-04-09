@@ -16,6 +16,8 @@ public class Spawn : MonoBehaviour
 	public float speed2;
 	public int jump1;
 	public int jump2;
+	public float rayStart1;
+	public float rayStart2;
 	public int oldest;
 
 	Grow myGrow;
@@ -46,10 +48,12 @@ public class Spawn : MonoBehaviour
 					clone1.transform.localScale = gameObject.transform.localScale;
 					speed1 = myMove.speed;
 					jump1 = myMove.jumpDivider;
+					rayStart1 = myMove.rayStart;
 					firstPlaced = true;
 					gameObject.transform.localScale -= new Vector3 (myGrow.growthIncrease, myGrow.growthIncrease, 0);
 					myMove.speed -= 200;
 					myMove.jumpDivider -= 5;
+					myMove.rayStart -= 2f;
 					if (GameObject.Find ("Second") == null) {
 						oldest = 1;
 					}
@@ -61,10 +65,12 @@ public class Spawn : MonoBehaviour
 					clone2.transform.localScale = gameObject.transform.localScale;
 					speed2 = myMove.speed;
 					jump2 = myMove.jumpDivider;
+					rayStart2 = myMove.rayStart;
 					secondPlaced = true;
 					gameObject.transform.localScale -= new Vector3 (myGrow.growthIncrease, myGrow.growthIncrease, 0);
 					myMove.speed -= 200;
 					myMove.jumpDivider -= 5;
+					myMove.rayStart -= 2f;
 				}
 			}
 		} else {
