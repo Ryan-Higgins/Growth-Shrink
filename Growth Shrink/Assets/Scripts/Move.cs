@@ -10,6 +10,7 @@ public class Move : MonoBehaviour {
 	public float speed;
 	public bool grounded;
 	public int jumpDivider;
+	public float rayStart = 2.5f;
 
 	// Use this for initialization
 	void Start () {
@@ -27,8 +28,8 @@ public class Move : MonoBehaviour {
 		Vector3 move = new Vector3 (h, 0, 0);
 
 		myRB.AddForce (move * speed*10);
-		//Debug.DrawRay (new Vector3 (transform.position.x, transform.position.y-2.5f - transform.localScale.y / 2, transform.position.z), Vector3.down);
-		RaycastHit2D hit = Physics2D.Raycast (new Vector3 (transform.position.x, transform.position.y - 2.5f - transform.localScale.y / 2, transform.position.z), Vector3.down, 0.01f);
+		Debug.DrawRay (new Vector3 (transform.position.x, transform.position.y-rayStart - transform.localScale.y / 2, transform.position.z), Vector3.down);
+		RaycastHit2D hit = Physics2D.Raycast (new Vector3 (transform.position.x, transform.position.y - rayStart - transform.localScale.y / 2, transform.position.z), Vector3.down, 0.01f);
 
 		if (hit.collider != null && hit.collider.tag == "Floor") {
 			grounded = true;

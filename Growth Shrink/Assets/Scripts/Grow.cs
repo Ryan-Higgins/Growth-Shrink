@@ -43,11 +43,12 @@ public class Grow : MonoBehaviour {
 			Destroy (cube.gameObject);
 			//checks the player is below the limit(if we want one) and grows them if they are below
 			if (transform.localScale.x <= growthLimit && transform.localScale.y <= growthLimit) {
-				scalingFrameLimit = 60;
+				scalingFrameLimit += 60;
 				//transform.localScale += new Vector3(growthIncrease,growthIncrease,0); This is original growth codes, use if we don't like lerp
 				//Adds speed each time so that the player can actually keep moving
 				move.speed += 200;
 				move.jumpDivider += 5;
+				move.rayStart += 2f;
 			}
 		}
 	}

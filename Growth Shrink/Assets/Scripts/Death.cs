@@ -28,6 +28,7 @@ public class Death : MonoBehaviour
 					gameObject.transform.localScale = mySpawnPoint.clone1.transform.localScale;
 					myMove.speed = mySpawnPoint.speed1;
 					myMove.jumpDivider = mySpawnPoint.jump1;
+					myMove.rayStart = mySpawnPoint.rayStart1;
 					mySpawnPoint.firstPlaced = false;	
 					mySpawnPoint.clone1.SetActive (false);
 					if (mySpawnPoint.clone2 != null) {
@@ -43,6 +44,7 @@ public class Death : MonoBehaviour
 					gameObject.transform.localScale = mySpawnPoint.clone2.transform.localScale;
 					myMove.speed = mySpawnPoint.speed2;
 					myMove.jumpDivider = mySpawnPoint.jump2;
+					myMove.rayStart = mySpawnPoint.rayStart2;
 					mySpawnPoint.clone2.SetActive (false);
 					if (mySpawnPoint.clone1 != null) {
 						mySpawnPoint.oldest = 1;
