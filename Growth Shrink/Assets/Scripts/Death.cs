@@ -2,34 +2,62 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Death : MonoBehaviour {
+public class Death : MonoBehaviour
+{
 
 	Spawn mySpawnPoint;
-	Transform levelSpawn;
 	Move myMove;
+	bool spawnAtTwo;
 
 	// Use this for initialization
-	void Start () {
+	void Start ()
+	{
 		mySpawnPoint = GetComponent<Spawn> ();
-		levelSpawn = GameObject.Find ("Spawn").GetComponent<Transform> ();
 		myMove = GetComponent<Move> ();
+		spawnAtTwo = false;
 	}
 	
 	// Update is called once per frame
-	void Update () {
-		if (Input.GetButtonDown ("Fire2")) {
-			if (mySpawnPoint.isPlaced) {
-				transform.position = mySpawnPoint.spawnPoint;
-				transform.localScale = new Vector3 (1, 1, 1);
-				mySpawnPoint.isPlaced = false;
-				mySpawnPoint.clone.SetActive (false);
-				myMove.speed = 100;
-				myMove.jumpDivider = 5;
-			} else if (!mySpawnPoint.isPlaced) {
-				transform.position = levelSpawn.position;
-				transform.localScale = new Vector3 (1, 1, 1);
-				myMove.speed = 100;
-				myMove.jumpDivider = 5;
+	void Update ()
+	{
+		if (Input.GetAxis ("Spawn") == 1) {		
+			if (mySpawnPoint.clone1.activeInHierarchy && mySpawnPoint.oldest == 1) {
+				if (!spawnAtTwo) {
+					//gameObject.transform.position = mySpawnPoint.spawnPoint1;
+					gameObject.transform.position = mySpawnPoint.clone1.transform.position;
+					gameObject.transform.localScale = mySpawnPoint.clone1.transform.localScale;
+					myMove.speed = mySpawnPoint.speed1;
+					myMove.jumpDivider = mySpawnPoint.jump1;
+					myMove.rayStart = mySpawnPoint.rayStart1;
+					mySpawnPoint.firstPlaced = false;	
+					mySpawnPoint.clone1.SetActive (false);
+					if (mySpawnPoint.clone2 != null) {
+						mySpawnPoint.oldest = 2;
+					} else {
+						mySpawnPoint.oldest = 0;
+					}
+				}
+			} else if (mySpawnPoint.clone2.activeInHierarchy && mySpawnPoint.oldest == 2) {
+				if (spawnAtTwo) {
+					//gameObject.transform.position = mySpawnPoint.spawnPoint2;
+					gameObject.transform.position = mySpawnPoint.clone2.transform.position;
+					gameObject.transform.localScale = mySpawnPoint.clone2.transform.localScale;
+					myMove.speed = mySpawnPoint.speed2;
+					myMove.jumpDivider = mySpawnPoint.jump2;
+					myMove.rayStart = mySpawnPoint.rayStart2;
+					mySpawnPoint.clone2.SetActive (false);
+					if (mySpawnPoint.clone1 != null) {
+						mySpawnPoint.oldest = 1;
+					} else {
+						mySpawnPoint.oldest = 0;
+					}
+				}
+			}
+		} else {
+			if (mySpawnPoint.clone1.activeInHierarchy && mySpawnPoint.oldest == 1) {
+				spawnAtTwo = false;
+			} else {
+				spawnAtTwo = true;
 			}
 		}
 	}
