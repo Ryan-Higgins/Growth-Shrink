@@ -17,8 +17,17 @@ public class MovingPlatform : MonoBehaviour {
 	}
 
 	void OnCollisionEnter2D(Collision2D other) {
-		if (other.gameObject.tag == "Wall") {
+		if (other.gameObject.tag == "Platform Wall") {
 			speed = -speed;
+		}
+		if (other.gameObject.tag == "Player" || other.gameObject.tag == "Spawn") {
+			other.transform.parent = gameObject.transform;
+		}
+	}
+
+	void OnCollisionExit2D(Collision2D other) {
+		if (other.gameObject.tag == "Player" || other.gameObject.tag == "Spawn") {
+			other.transform.parent = GameObject.Find ("Main Camera").transform;
 		}
 	}
 }

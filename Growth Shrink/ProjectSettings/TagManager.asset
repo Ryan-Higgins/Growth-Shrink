@@ -8,6 +8,7 @@ TagManager:
   - Fan
   - Wall
   - Floor
+  - Platform Wall
   layers:
   - Default
   - TransparentFX
@@ -50,4 +51,7 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 4198800053
+    locked: 0
+  - name: UI
+    uniqueID: 2911745329
     locked: 0
