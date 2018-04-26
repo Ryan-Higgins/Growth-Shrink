@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Animations;
 
 public class Move : MonoBehaviour {
 
@@ -11,6 +12,7 @@ public class Move : MonoBehaviour {
 	public bool grounded;
 	public int jumpDivider;
 	public float rayStart = 2.5f;
+	public Animator myAnim;
 
 	// Use this for initialization
 	void Start () {
@@ -18,6 +20,7 @@ public class Move : MonoBehaviour {
 
 		speed = 200;
 		jumpDivider = 5;
+		myAnim = GetComponent<Animator> ();
 	}
 	
 	// Update is called once per frame
@@ -27,7 +30,14 @@ public class Move : MonoBehaviour {
 		Vector3 jump = new Vector3 (0, speed, 0);
 		Vector3 move = new Vector3 (h, 0, 0);
 
-		myRB.AddForce (move * speed*10);
+		myRB.AddForce (move * speed * 10);
+
+		if (h > 0 || h < 0) {
+			myAnim.SetBool ("IsMoving?", true);
+		} else {
+			myAnim.SetBool ("IsMoving?", false);
+		}
+
 		Debug.DrawRay (new Vector3 (transform.position.x, transform.position.y-rayStart - transform.localScale.y / 2, transform.position.z), Vector3.down);
 		RaycastHit2D hit = Physics2D.Raycast (new Vector3 (transform.position.x, transform.position.y - rayStart - transform.localScale.y / 2, transform.position.z), Vector3.down, 0.01f);
 
@@ -38,7 +48,13 @@ public class Move : MonoBehaviour {
 		}
 
 		if (grounded == true && Input.GetButtonDown ("Jump")) {
-			myRB.AddForce (jump * speed*10 / jumpDivider);
+			myRB.AddForce (jump * speed * 10 / jumpDivider);
 		}
+
+		if (grounded == false) {
+			myAnim.SetBool ("Jumping", true);
+		} else {
+			myAnim.SetBool ("Jumping", false);
 	}
+}
 }
