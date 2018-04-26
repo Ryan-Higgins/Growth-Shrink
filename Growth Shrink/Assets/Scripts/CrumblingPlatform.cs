@@ -11,11 +11,21 @@ public class CrumblingPlatform : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		StartCoroutine (Crumble());
+
+	}
+
+	void OnCollisionStay2D(Collision2D other) {
+		if (other.gameObject.tag == "Player") {
+			StartCoroutine (Crumble());
+		}
 	}
 
 	IEnumerator Crumble() {
 		yield return new WaitForSeconds(1);
-		gameObject.SetActive (false);
+		gameObject.GetComponent<BoxCollider2D>().enabled = false;
+		gameObject.GetComponent<MeshRenderer>().enabled = false;
+		yield return new WaitForSeconds(3);
+		gameObject.GetComponent<BoxCollider2D>().enabled = true;
+		gameObject.GetComponent<MeshRenderer>().enabled = true;
 	}
 }

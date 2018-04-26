@@ -79,3 +79,4 @@ C:\Users\Admin\Documents\Repositeries\Growth-Shrink\Growth Shrink\Temp\bin\Debug
 C:\Users\Admin\Documents\Repositeries\Growth-Shrink\Growth Shrink\Temp\bin\Debug\UnityEngine.UIAutomation.xml
 C:\Users\Admin\Documents\Repositeries\Growth-Shrink\Growth Shrink\Temp\bin\Debug\UnityEngine.GoogleAudioSpatializer.xml
 C:\Users\Admin\Documents\Repositeries\Growth-Shrink\Growth Shrink\Temp\bin\Debug\UnityEngine.SpatialTracking.xml
+G:\Repositories\Growth-Shrink\Growth Shrink\Temp\bin\Debug\Facebook.Unity.Settings.dll
