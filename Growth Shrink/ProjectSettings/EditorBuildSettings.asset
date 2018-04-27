@@ -14,3 +14,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Tom3.unity
     guid: ec792ae23c61f3f47b52101bd1fd1779
+  - enabled: 1
+    path: Assets/Scenes/Test Scene.unity
+    guid: 6e803e9313197dc4da8f1dab36c01b7e
+  - enabled: 1
+    path: Assets/Scenes/Test Puzzles.unity
+    guid: 721c53db734ffec4dbffc5aa4282d2f0
+  - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: 7a98cd94c00e289429ac31b152cf0a9b
