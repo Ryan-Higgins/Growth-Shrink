@@ -22,7 +22,7 @@ public class Grow : MonoBehaviour {
 		}
 
 		if (growthLimit == 0) {
-			growthLimit = 5;
+			growthLimit = 3;
 		}
 
 	}
@@ -46,8 +46,8 @@ public class Grow : MonoBehaviour {
 				scalingFrameLimit += 60;
 				//transform.localScale += new Vector3(growthIncrease,growthIncrease,0); This is original growth codes, use if we don't like lerp
 				//Adds speed each time so that the player can actually keep moving
-				move.speed += 200;
-				move.jumpDivider += 5;
+				move.speed += 250;
+				move.jumpDivider += 3;
 				move.rayStart += 2f;
 			}
 		}

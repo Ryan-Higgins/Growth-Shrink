@@ -27,7 +27,7 @@ public class MovingPlatform : MonoBehaviour {
 
 	void OnCollisionExit2D(Collision2D other) {
 		if (other.gameObject.tag == "Player" || other.gameObject.tag == "Spawn") {
-			other.transform.parent = GameObject.Find ("Main Camera").transform;
+			other.transform.parent = GameObject.Find ("Platform Fix").transform;
 		}
 	}
 }
