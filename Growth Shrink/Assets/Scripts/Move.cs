@@ -38,10 +38,14 @@ public class Move : MonoBehaviour {
 			myAnim.SetBool ("IsMoving?", false);
 		}
 
-		Debug.DrawRay (new Vector3 (transform.position.x, transform.position.y-rayStart - transform.localScale.y / 2, transform.position.z), Vector3.down);
-		RaycastHit2D hit = Physics2D.Raycast (new Vector3 (transform.position.x, transform.position.y - rayStart - transform.localScale.y / 2, transform.position.z), Vector3.down, 0.01f);
+		//Debug.DrawRay (new Vector3 (transform.position.x, transform.position.y-rayStart - transform.localScale.y / 2, transform.position.z), Vector3.down);
+		//Debug.DrawRay (new Vector3 (transform.position.x  + transform.localScale.x*2, transform.position.y-rayStart - transform.localScale.y / 2, transform.position.z), Vector3.down);
 
-		if (hit.collider != null && hit.collider.tag == "Floor") {
+		RaycastHit2D hit = Physics2D.Raycast (new Vector3 (transform.position.x, transform.position.y - rayStart - transform.localScale.y / 2, transform.position.z), Vector3.down, 0.01f);
+		RaycastHit2D hitRight =  Physics2D.Raycast (new Vector3 (transform.position.x + transform.localScale.x *2, transform.position.y - rayStart - transform.localScale.y / 2, transform.position.z), Vector3.down, 0.01f);
+		RaycastHit2D hitLeft =  Physics2D.Raycast (new Vector3 (transform.position.x - transform.localScale.x *2, transform.position.y - rayStart - transform.localScale.y / 2, transform.position.z), Vector3.down, 0.01f);
+
+		if ((hit.collider != null && hit.collider.tag == "Floor") || (hitRight.collider != null && hitRight.collider.tag == "Floor") || (hitLeft.collider != null && hitLeft.collider.tag == "Floor") ) {
 			grounded = true;
 		} else { 
 			grounded = false;
