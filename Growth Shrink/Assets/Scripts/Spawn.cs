@@ -38,7 +38,7 @@ public class Spawn : MonoBehaviour
 	void FixedUpdate ()
 	{
 		
-		if (Input.GetAxis ("Drop") == 1) {
+		if (Input.GetAxis ("Drop") == 1 || Input.GetKeyUp(KeyCode.Q)) {
 			if (transform.localScale.x > 1) {
 				if (!firstPlaced) {
 					spawnPoint1 = new Vector3 (transform.position.x, transform.position.y, transform.position.z - 1);
