@@ -20,7 +20,7 @@ public class Death : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-		if (Input.GetAxis ("Spawn") == 1) {		
+		if (Input.GetAxis ("Spawn") == 1 || Input.GetKeyUp(KeyCode.E)) {		
 			if (mySpawnPoint.clone1.activeInHierarchy && mySpawnPoint.oldest == 1) {
 				if (!spawnAtTwo) {
 					//gameObject.transform.position = mySpawnPoint.spawnPoint1;
