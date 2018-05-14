@@ -20,6 +20,10 @@ public class PauseMenu : MonoBehaviour {
 		}
 	}
 
+	public void Play() {
+		SceneManager.LoadScene ("Tut");
+	}
+
 	public void Resume() {
 		pauseMenuUI.SetActive (false);
 		Time.timeScale = 1f;
