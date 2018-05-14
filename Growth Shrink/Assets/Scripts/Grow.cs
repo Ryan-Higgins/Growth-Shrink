@@ -8,12 +8,22 @@ public class Grow : MonoBehaviour {
 	public float growthLimit;
 	Vector3 targetScale;
 	int scalingFrameLimit = 0;
+	public int speedChange;
+	public int jumpChange;
 
 	Move move;
 
 	// Use this for initialization
 	void Start () {
 		move = GetComponent<Move> ();
+
+		if (speedChange == 0) {
+			speedChange = 250;
+		}
+
+		if (jumpChange == 0) {
+			jumpChange = 3;
+		}
 
 
 		//Ensuring values always have a default if not set in editor
@@ -46,8 +56,8 @@ public class Grow : MonoBehaviour {
 				scalingFrameLimit += 60;
 				//transform.localScale += new Vector3(growthIncrease,growthIncrease,0); This is original growth codes, use if we don't like lerp
 				//Adds speed each time so that the player can actually keep moving
-				move.speed += 250;
-				move.jumpDivider += 3;
+				move.speed += speedChange;
+				move.jumpDivider += jumpChange;
 				move.rayStart += 2f;
 			}
 		}

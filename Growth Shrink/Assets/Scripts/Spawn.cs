@@ -51,8 +51,8 @@ public class Spawn : MonoBehaviour
 					rayStart1 = myMove.rayStart;
 					firstPlaced = true;
 					gameObject.transform.localScale -= new Vector3 (myGrow.growthIncrease, myGrow.growthIncrease, 0);
-					myMove.speed -= 200;
-					myMove.jumpDivider -= 5;
+					myMove.speed -= myGrow.speedChange;
+					myMove.jumpDivider -= myGrow.jumpChange;
 					myMove.rayStart -= 2f;
 					if (GameObject.Find ("Second") == null) {
 						oldest = 1;
@@ -68,8 +68,8 @@ public class Spawn : MonoBehaviour
 					rayStart2 = myMove.rayStart;
 					secondPlaced = true;
 					gameObject.transform.localScale -= new Vector3 (myGrow.growthIncrease, myGrow.growthIncrease, 0);
-					myMove.speed -= 200;
-					myMove.jumpDivider -= 5;
+					myMove.speed -= myGrow.speedChange;
+					myMove.jumpDivider -= myGrow.jumpChange;
 					myMove.rayStart -= 2f;
 				}
 			}
