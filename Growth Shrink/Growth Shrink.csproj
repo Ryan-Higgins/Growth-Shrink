@@ -244,6 +244,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Button.cs" />
+    <Compile Include="Assets\Scripts\Button2.cs" />
     <Compile Include="Assets\Scripts\CameraFollow.cs" />
     <Compile Include="Assets\Scripts\CrumblingPlatform.cs" />
     <Compile Include="Assets\Scripts\Death.cs" />
